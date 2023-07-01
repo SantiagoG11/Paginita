@@ -1,14 +1,20 @@
-*{
-	padding: 0;
-	margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-video{
+body {
+  overflow-y: hidden;
+}
+
+video {
   position: absolute;
   z-index: -1;
+  width: 100%;
+  height: auto;
 }
 
-h1{
+h1 {
   text-align: center;
   padding-top: 3em;
   font-family: 'Gloria Hallelujah', cursive;
@@ -17,9 +23,8 @@ h1{
   text-shadow: 0px 0px 10px #f8f2cb, 0px 0px 5px #f8f2cb;
 }
 
-.menu{
+.menu {
   display: flex;
-  /*justify-content: space-evenly;*/
   justify-content: center;
 }
 
@@ -34,27 +39,30 @@ button {
   font-size: 13px;
   font-weight: bold;
   color: wheat;
-  margin: 0 100px;
+  margin: 0 10px;
 }
 
-a{
+a {
   position: absolute;
   z-index: 1;
   width: 110px;
   text-decoration: none;
   color: wheat;
-  margin: -4px -50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #clip {
   --color: transparent;
   position: absolute;
   top: 0;
+  left: 0;
   overflow: hidden;
   width: 100%;
   height: 100%;
   border: 5px double var(--color);
-  -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
 
 .arrow {
@@ -68,11 +76,11 @@ a{
 
 #leftArrow {
   left: -13.5%;
-  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%);
+  clip-path: polygon(100% 0, 100% 100%, 0 50%);
 }
 
 #rightArrow {
-  -webkit-clip-path: polygon(100% 49%, 0 0, 0 100%);
+  clip-path: polygon(100% 49%, 0 0, 0 100%);
   left: 102%;
 }
 
@@ -118,23 +126,19 @@ button:hover #leftArrow {
 }
 
 button:hover #leftTop {
-  animation: 0.1s ease-in-out 0.05s both changeColor8,
-  0.2s linear 0.4s both lightEffect8;
+  animation: 0.1s ease-in-out 0.05s both changeColor8, 0.2s linear 0.4s both lightEffect8;
 }
 
 button:hover #rightTop {
-  animation: 0.1s ease-in-out 0.15s both changeColor8,
-  0.2s linear 0.4s both lightEffect8;
+  animation: 0.1s ease-in-out 0.15s both changeColor8, 0.2s linear 0.4s both lightEffect8;
 }
 
 button:hover #rightBottom {
-  animation: 0.1s ease-in-out 0.25s both changeColor8,
-  0.2s linear 0.4s both lightEffect8;
+  animation: 0.1s ease-in-out 0.25s both changeColor8, 0.2s linear 0.4s both lightEffect8;
 }
 
 button:hover #leftBottom {
-  animation: 0.1s ease-in-out 0.35s both changeColor8,
-  0.2s linear 0.4s both lightEffect8;
+  animation: 0.1s ease-in-out 0.35s both changeColor8, 0.2s linear 0.4s both lightEffect8;
 }
 
 button:hover .corner {
@@ -150,7 +154,6 @@ button:hover #clip {
   from {
     background-color: wheat;
   }
-
   to {
     background-color: wheat;
   }
@@ -160,7 +163,6 @@ button:hover #clip {
   from {
     box-shadow: 1px 1px 5px wheat;
   }
-
   to {
     box-shadow: 0 0 2px wheat;
   }
@@ -169,7 +171,6 @@ button:hover #clip {
 @keyframes greenLight8 {
   from {
   }
-
   to {
     box-shadow: inset 0px 0px 32px wheat;
   }
@@ -179,7 +180,6 @@ button:hover #clip {
   from {
     transform: translate(0px);
   }
-
   to {
     transform: translateX(10px);
   }
@@ -189,16 +189,12 @@ button:hover #clip {
   from {
     transform: translate(0px);
   }
-
   to {
     transform: translateX(-10px);
   }
 }
 
-
-
-
-footer{
+footer {
   position: absolute;
   bottom: 0;
 }
@@ -236,7 +232,6 @@ footer{
   animation-duration: 2s;
   animation-name: titilar;
   animation-iteration-count: infinite;
-
 }
 
 .card span {
@@ -254,7 +249,6 @@ footer{
   transition: all .3s cubic-bezier(.6,.4,0,1);
   font-family: 'Space Mono', monospace;
   background-color: var(--hover-bg);
-
 }
 
 .card:hover span {
@@ -262,18 +256,24 @@ footer{
   font-size: 1.2em;
 }
 
-
 .card:hover>div,.card:hover>strong {
   opacity: 0;
 }
-
 
 @keyframes titilar{
   from{
     opacity: 100%;
   }
-
   to{
     opacity: 0%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+  button {
+    margin: 0 5px;
   }
 }
