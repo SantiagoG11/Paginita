@@ -207,11 +207,11 @@ footer{
   --bg: transparent; /*fondo carta*/
   --hover-bg: #4E0A12; /*fondo carta 2*/
   --hover-text: #C2F126; /*color texto 2*/
-  width: 5.3em;
-  height: 3.7em;
+  width: 5.8em;
+  height: 5em;
   text-align: left;
   background: var(--bg);
-  padding: 4.5em;
+  padding: 3.5em;
   border-radius: 5px;
   position: relative;
   overflow: visible;
